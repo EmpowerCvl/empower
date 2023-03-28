@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Skyline.DataMiner.CICD.Tools.WinEncryptedKeys.Lib</name>
+    </assembly>
+    <members>
+        <member name="T:Skyline.DataMiner.CICD.Tools.WinEncryptedKeys.Lib.Keys">
+            <summary>
+            Allows storage and retrieval of an encrypted secret on a windows server. Retrieval of a key can only be done from the same system that added the key.
+            </summary>
+        </member>
+        <member name="M:Skyline.DataMiner.CICD.Tools.WinEncryptedKeys.Lib.Keys.RetrieveKey(System.String)">
+            <summary>
+            Retrieves from Windows Environment Variables, an unencrypted a key that was set previously using this library.
+            </summary>
+            <param name="keyName">Name of the key. Make sure this is a unique name in the Windows Environment Variables.</param>
+            <returns>A SecureString holding the unencrypted value.</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown if the server retrieving the key was not the same server that created the key.</exception>
+        </member>
+        <member name="M:Skyline.DataMiner.CICD.Tools.WinEncryptedKeys.Lib.Keys.SetKey(System.String,System.String)">
+            <summary>
+            Stores and encrypts a key that can only be retrieved by the same machine that set it.
+            </summary>
+            <param name="keyName">Name of the key. Make sure this is a unique name in the Windows Environment Variables.</param>
+            <param name="newValue">Value to encrypt and set.</param>
+        </member>
+    </members>
+</doc>

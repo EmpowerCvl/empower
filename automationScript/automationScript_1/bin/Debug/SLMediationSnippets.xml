@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SLMediationSnippets</name>
+    </assembly>
+    <members>
+        <member name="T:Skyline.DataMiner.MediationSnippets.DoubleParameterValue">
+            <summary>
+            Represents a double value of a parameter.
+            </summary>
+        </member>
+        <member name="T:Skyline.DataMiner.MediationSnippets.IMediator">
+            <summary>
+            The interface that every mediation snippet should implement once.
+            </summary>
+        </member>
+        <member name="M:Skyline.DataMiner.MediationSnippets.IMediator.ConvertDeviceToProfile(Skyline.DataMiner.MediationSnippets.IMediation,Skyline.DataMiner.MediationSnippets.ParameterSet)">
+            <summary>
+            Converts a value of a device to its profile value format.
+            Should never return null, instead, the method should throw exceptions.
+            </summary>
+            <param name="mediation">a helper object to get other parameter values from the device</param>
+            <param name="setValue">the value to convert</param>
+            <returns>never null</returns>
+        </member>
+        <member name="M:Skyline.DataMiner.MediationSnippets.IMediator.ConvertProfileToDevice(Skyline.DataMiner.MediationSnippets.IMediation,Skyline.DataMiner.MediationSnippets.ParameterValue)">
+            <summary>
+            Converts a value of a profile to its device value format.
+            Should never return null, instead, the method should throw exceptions.
+            </summary>
+            <param name="mediation">a helper object to get other parameter values from the device</param>
+            <param name="value">the value to convert</param>
+            <returns>never null</returns>
+        </member>
+        <member name="T:Skyline.DataMiner.MediationSnippets.IMediation">
+            <summary>
+            A helper interface that can be used in the mediation snippets.
+            The getters for the parameter values always go to the element for which the mediation is being done.
+            </summary>
+        </member>
+        <member name="M:Skyline.DataMiner.MediationSnippets.IMediation.GetValue(System.Int32)">
+            <summary>
+            Returns the value for the given parameter.
+            </summary>
+            <exception cref="T:Skyline.DataMiner.MediationSnippets.ParameterValueNotFoundException">if no value was found for the given parameter for various reason</exception>
+            <returns>never null</returns>
+        </member>
+        <member name="M:Skyline.DataMiner.MediationSnippets.IMediation.GetValue(System.Int32,System.String)">
+            <summary>
+            Returns the value for the given table cell.
+            </summary>
+            <exception cref="T:Skyline.DataMiner.MediationSnippets.ParameterValueNotFoundException">if no value was found for the given parameter for various reason</exception>
+            <returns>never null</returns>
+        </member>
+        <member name="M:Skyline.DataMiner.MediationSnippets.IMediation.LogError(System.String)">
+            <summary>
+            Logs an error for the current snippet to SLMediationSnippetInfo.txt.
+            </summary>
+            <param name="error"></param>
+        </member>
+        <member name="T:Skyline.DataMiner.MediationSnippets.ParameterSet">
+            <summary>
+            Represents a done, or to be done, parameter set on an unspecified element.
+            </summary>
+        </member>
+        <member name="T:Skyline.DataMiner.MediationSnippets.ParameterValue">
+            <summary>
+            The abstract parent of the <see cref="T:Skyline.DataMiner.MediationSnippets.DoubleParameterValue"/> and <see cref="T:Skyline.DataMiner.MediationSnippets.StringParameterValue"/>.
+            </summary>
+        </member>
+        <member name="M:Skyline.DataMiner.MediationSnippets.ParameterValue.GetStringValue">
+            <summary>
+            Will throw if the value is not a string.
+            </summary>
+        </member>
+        <member name="M:Skyline.DataMiner.MediationSnippets.ParameterValue.GetDoubleValue">
+            <summary>
+            Will throw if the value is not a double.
+            </summary>
+        </member>
+        <member name="T:Skyline.DataMiner.MediationSnippets.ProfileToDeviceResult">
+            <summary>
+            The result of converting the profile value to the device value.
+            </summary>
+        </member>
+        <member name="P:Skyline.DataMiner.MediationSnippets.ProfileToDeviceResult.MediatedValue">
+            <summary>
+            The converted value meant for the PID configured on the profile parameter.
+            Additionally the table index of the entry-point or the table index configured on the profile parameter will be used to set the value.
+            </summary>
+        </member>
+        <member name="P:Skyline.DataMiner.MediationSnippets.ProfileToDeviceResult.AdditionalSets">
+            <summary>
+            Additional sets that should be done on the device when setting the mediated value.
+            </summary>
+        </member>
+        <member name="T:Skyline.DataMiner.MediationSnippets.StringParameterValue">
+            <summary>
+            Represents a string value of a parameter.
+            </summary>
+        </member>
+    </members>
+</doc>

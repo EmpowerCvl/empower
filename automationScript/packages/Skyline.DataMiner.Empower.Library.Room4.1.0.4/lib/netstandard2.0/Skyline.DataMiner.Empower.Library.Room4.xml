@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Skyline.DataMiner.Empower.Library.Room4</name>
+    </assembly>
+    <members>
+        <member name="T:Skyline.DataMiner.Empower.Library.Room4.IOrder">
+            <summary>
+             Allows dispatching of an order to be sent over HTTPS to DataMiner.
+            </summary>
+        </member>
+        <member name="M:Skyline.DataMiner.Empower.Library.Room4.IOrder.Dispatch(System.String)">
+            <summary>
+            Dispatches this job and waits on result.
+            REQUIRED - A user secret holding the GUID to log to DataMiner is required.
+            Run the commands on every server you want to provide access: 
+            dotnet tool install --global Skyline.DataMiner.CICD.Tools.WinEncryptedKeys
+            WinEncryptedKeys --name SLC_EXTERNAL_DISPATCHER_KEY --value MYGUID
+            </summary>
+            <param name="user">The user dispatching the job.</param>
+            <returns>True if the dispatch was successful, False if logging failed.</returns>
+        </member>
+        <member name="M:Skyline.DataMiner.Empower.Library.Room4.IOrder.DispatchAsync(System.String)">
+            <summary>
+            Dispatches this job without waiting on a result.
+            Run the commands on every server you want to provide access: 
+            dotnet tool install --global Skyline.DataMiner.CICD.Tools.WinEncryptedKeys
+            WinEncryptedKeys --name SLC_EXTERNAL_DISPATCHER_KEY --value MYGUID
+            </summary>
+            <param name="user">The user dispatching the job.</param>
+            <returns>True if the dispatch was successful, False if logging failed.</returns>
+        </member>
+        <member name="T:Skyline.DataMiner.Empower.Library.Room4.Order">
+            <summary>
+             Allows dispatching of an order to be sent over HTTPS to DataMiner.
+            </summary>
+        </member>
+        <member name="M:Skyline.DataMiner.Empower.Library.Room4.Order.#ctor(System.String)">
+            <summary>
+            Creates an instance of <see cref="T:Skyline.DataMiner.Empower.Library.Room4.Order"/>.
+            </summary>
+            <param name="orderValue">Value of the order.</param>
+        </member>
+        <member name="M:Skyline.DataMiner.Empower.Library.Room4.Order.Dispatch(System.String)">
+            <summary>
+            Dispatches this job and waits on result.
+            REQUIRED - A user secret holding the GUID to log to DataMiner is required.
+            Run the commands on every server you want to provide access: 
+            dotnet tool install --global Skyline.DataMiner.CICD.Tools.WinEncryptedKeys
+            WinEncryptedKeys --name SLC_EXTERNAL_DISPATCHER_KEY --value MYGUID
+            </summary>
+            <param name="user">The user dispatching the job.</param>
+            <returns>True if the dispatch was successful, False if logging failed.</returns>
+        </member>
+        <member name="M:Skyline.DataMiner.Empower.Library.Room4.Order.DispatchAsync(System.String)">
+            <summary>
+            Dispatches this job without waiting on a result.
+            Run the commands on every server you want to provide access: 
+            dotnet tool install --global Skyline.DataMiner.CICD.Tools.WinEncryptedKeys
+            WinEncryptedKeys --name SLC_EXTERNAL_DISPATCHER_KEY --value MYGUID
+            </summary>
+            <param name="user">The user dispatching the job.</param>
+            <returns>True if the dispatch was successful, False if logging failed.</returns>
+        </member>
+        <member name="T:Empower.Library.Room4.OrderFactory">
+            <summary>
+            Factory to create Orders.
+            </summary>
+        </member>
+        <member name="M:Empower.Library.Room4.OrderFactory.CreateOrder(System.String)">
+            <summary>
+            Create an instance of <see cref="T:Skyline.DataMiner.Empower.Library.Room4.IOrder"/>.
+            </summary>
+            <param name="orderValue">Value of the order.</param>
+            <returns>An instance of <see cref="T:Skyline.DataMiner.Empower.Library.Room4.IOrder"/>.</returns>
+        </member>
+    </members>
+</doc>

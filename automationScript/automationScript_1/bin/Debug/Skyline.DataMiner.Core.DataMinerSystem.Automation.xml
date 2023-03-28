@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Skyline.DataMiner.Core.DataMinerSystem.Automation</name>
+    </assembly>
+    <members>
+        <member name="T:Skyline.DataMiner.Core.DataMinerSystem.Automation.EngineExtensions">
+            <summary>
+            Defines extension methods on the <see cref="T:Skyline.DataMiner.Automation.Engine"/> class.
+            </summary>
+        </member>
+        <member name="F:Skyline.DataMiner.Core.DataMinerSystem.Automation.EngineExtensions.OverrideGetDms">
+            <summary>
+            Allows an override of the behavior of GetDms to return a Fake or Mock of <see cref="T:Skyline.DataMiner.Core.DataMinerSystem.Common.IDms"/>.
+            Important: When this is used, unit tests should never be run in parallel.
+            </summary>
+        </member>
+        <member name="M:Skyline.DataMiner.Core.DataMinerSystem.Automation.EngineExtensions.GetDms(Skyline.DataMiner.Automation.Engine)">
+            <summary>
+            Retrieves an object implementing the <see cref="T:Skyline.DataMiner.Core.DataMinerSystem.Common.IDms"/> interface.
+            </summary>
+            <param name="engine">The <see cref="T:Skyline.DataMiner.Automation.Engine"/> instance.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="engine"/> is <see langword="null" />.</exception>
+            <returns>The <see cref="T:Skyline.DataMiner.Core.DataMinerSystem.Common.IDms"/> object.</returns>
+        </member>
+        <member name="T:Skyline.DataMiner.Core.DataMinerSystem.Automation.IEngineExtensions">
+            <summary>
+            Defines extension methods on the <see cref="T:Skyline.DataMiner.Automation.IEngine"/> interface.
+            </summary>
+        </member>
+        <member name="F:Skyline.DataMiner.Core.DataMinerSystem.Automation.IEngineExtensions.OverrideGetDms">
+            <summary>
+            Allows an override of the behavior of GetDms to return a Fake or Mock of <see cref="T:Skyline.DataMiner.Core.DataMinerSystem.Common.IDms"/>.
+            Important: When this is used, unit tests should never be run in parallel.
+            </summary>
+        </member>
+        <member name="M:Skyline.DataMiner.Core.DataMinerSystem.Automation.IEngineExtensions.GetDms(Skyline.DataMiner.Automation.IEngine)">
+            <summary>
+            Retrieves an object implementing the <see cref="T:Skyline.DataMiner.Core.DataMinerSystem.Common.IDms"/> interface.
+            </summary>
+            <param name="engine">The <see cref="T:Skyline.DataMiner.Automation.IEngine"/> implementation.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="engine"/> is <see langword="null" />.</exception>
+            <returns>The <see cref="T:Skyline.DataMiner.Core.DataMinerSystem.Common.IDms"/> object.</returns>
+        </member>
+    </members>
+</doc>
